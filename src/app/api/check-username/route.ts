@@ -17,7 +17,7 @@ export async function GET(request: Request){
       message : 'Method not allowed'
     }, {status : 405})
   };
-
+ 
   await dbConncet();
   try {
     //checking username by url
