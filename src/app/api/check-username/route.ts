@@ -9,6 +9,15 @@ const UserNameQuerySchema = z.object({
 })
 
 export async function GET(request: Request){
+  //todo
+  //checking method is get or not
+  if(request.method !== 'GET'){
+    return Response.json({
+      success : false,
+      message : 'Method not allowed'
+    }, {status : 405})
+  };
+ 
   await dbConncet();
   try {
     //checking username by url
