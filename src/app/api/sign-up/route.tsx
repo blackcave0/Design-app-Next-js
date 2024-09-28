@@ -1,3 +1,12 @@
+//::TODO -> error in this code fix some problem soon 
+/**  
+  --Summary of change in this code
+  * fix _setHours_ instead of _setDate_ for expiry date.
+  * Correct typo such as isVarified -> isVerified, hasedPasword -> hashedPassword.
+  * Replace _Response.json_ with proper _new Response()_ usage.
+  * Add better error logging.
+  * Made minor improvements for consistency in the user checking logic
+*/
 import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/User";
 import bcrypt from 'bcryptjs'
