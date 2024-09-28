@@ -52,7 +52,7 @@ export async function POST(request: Request) {
       expiryDate.setDate(expiryDate.getHours() + 1);
 
       // Create a new user
-      const newUser = new UserModel({ username, email, password: hasedPassword, verifyCode, verifyCodeExpiry: expiryDate, isVarified: false, isAccptingMessages: true, messages: [] });
+      const newUser = new UserModel({ username, email, password: hasedPassword, verifyCode, verifyCodeExpiry: expiryDate, isVarified: false, isAcceptingMessages: true, messages: [] });
       await newUser.save();
 
       // Send verification email
