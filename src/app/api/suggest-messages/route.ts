@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
     // Convert messages into a core format and use GPT-4-turbo model
     const result = await streamText({
-      model: openai('gpt-4-turbo'),
+      model: openai('gpt-3.5-turbo-instruct'),
       messages: convertToCoreMessages(messages),
     });
 
