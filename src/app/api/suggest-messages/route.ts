@@ -26,9 +26,8 @@ export async function POST(req: Request) {
     // Return a user-friendly error message and status code
     return NextResponse.json({
       error: 'Failed to process the request. Please try again later.'
-    }), {
+    }, {
       status: 500,
-      headers: { 'Content-Type': 'application/json' }
-    };
+    });
   }
 }
