@@ -15,7 +15,7 @@ export async function POST(req: Request) {
 
     // Make the request to the OpenAI API
     const response = await openai.chat.completions.create({
-      model: 'gpt-4-turbo',  // or 'gpt-3.5-turbo'
+      model: 'gpt-3.5-turbo',  // or 'gpt-3.5-turbo'
       messages: messages,    // Pass the conversation history
     });
 
