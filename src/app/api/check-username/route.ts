@@ -26,7 +26,7 @@ export async function GET(request: Request){
 
     // validate with zod
     const result = UserNameQuerySchema.safeParse(qeuryParam);
-    console.log(result) //::todo Remove
+    console.log('result' ,result) //::todo Remove
     if(!result.success){
       const usernameError = result.error.format().username?._errors || [];
       return Response.json({
@@ -50,7 +50,8 @@ export async function GET(request: Request){
 
     return Response.json({
       success : true,
-      message : 'Username available'
+      message : 'Username available',
+      username
     }, {status : 200})
     
   } catch (error) {
