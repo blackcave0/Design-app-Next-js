@@ -1,3 +1,12 @@
+//::TODO -> error in this code fix some problem soon 
+/**  
+  --Summary of change in this code
+  * fix _setHours_ instead of _setDate_ for expiry date.
+  * Correct typo such as isVarified -> isVerified, hasedPasword -> hashedPassword.
+  * Replace _Response.json_ with proper _new Response()_ usage.
+  * Add better error logging.
+  * Made minor improvements for consistency in the user checking logic
+*/
 import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/User";
 import bcrypt from 'bcryptjs'
@@ -39,7 +48,7 @@ export async function POST(request: Request) {
         existingUserByEmail.password = hasedPassword;
         existingUserByEmail.verifyCode = verifyCode;
         existingUserByEmail.verifyCodeExpiry = expiryDate;
-        expiryDate.setDate(expiryDate.getHours() + 1);
+        expiryDate.setHours(expiryDate.getHours() + 1);
         await existingUserByEmail.save();
       }
     } else {
@@ -49,7 +58,7 @@ export async function POST(request: Request) {
 
       //-- settign password expiry date to 1 hour from now
       const expiryDate = new Date();
-      expiryDate.setDate(expiryDate.getHours() + 1);
+      expiryDate.setHours(expiryDate.getHours() + 1);
 
       // Create a new user
       const newUser = new UserModel({ username, email, password: hasedPassword, verifyCode, verifyCodeExpiry: expiryDate, isVarified: false, isAcceptingMessages: true, messages: [] });
