@@ -48,7 +48,7 @@ export async function POST(request: Request) {
         existingUserByEmail.password = hasedPassword;
         existingUserByEmail.verifyCode = verifyCode;
         existingUserByEmail.verifyCodeExpiry = expiryDate;
-        expiryDate.setDate(expiryDate.getHours() + 1);
+        expiryDate.setHours(expiryDate.getHours() + 1);
         await existingUserByEmail.save();
       }
     } else {
@@ -58,7 +58,7 @@ export async function POST(request: Request) {
 
       //-- settign password expiry date to 1 hour from now
       const expiryDate = new Date();
-      expiryDate.setDate(expiryDate.getHours() + 1);
+      expiryDate.setHours(expiryDate.getHours() + 1);
 
       // Create a new user
       const newUser = new UserModel({ username, email, password: hasedPassword, verifyCode, verifyCodeExpiry: expiryDate, isVarified: false, isAcceptingMessages: true, messages: [] });
