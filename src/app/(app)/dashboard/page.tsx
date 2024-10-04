@@ -2,7 +2,7 @@
 
 const Page = () => {
   return (
-    <div>Dashboard Dashboard--Navbar-messageCardd</div>
+    <div>Dashboard Dashboard--Navbar-messageCard</div>
   )
 }
 
