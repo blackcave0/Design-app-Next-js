@@ -1,0 +1,22 @@
+[
+  {
+    "title": "John Doe",
+    "content": "Hey there! Just wanted to say hello.",
+    "receivedTime": "2 hours ago"
+  },
+  {
+    "title": "Jane Smith",
+    "content": "Got any questions about the project?",
+    "receivedTime": "30 minutes ago"
+  },
+  {
+    "title": "Peter Jones",
+    "content": "Looking forward to working with you!",
+    "receivedTime": "1 hour ago"
+  },
+  {
+    "title": "Alice Brown",
+    "content": "Give me a call when you have a chance.",
+    "receivedTime": "5 minutes ago"
+  }
+]

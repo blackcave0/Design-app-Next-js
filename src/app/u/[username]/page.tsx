@@ -1,9 +1,16 @@
+'use client'
+import { useParams } from 'next/navigation'
+// import { useSession } from 'next-auth/react'
 import React from 'react'
-
-const page = () => {
+// useParams
+const PublicMessagePage = () => {
+  // const { data: session } = useSession()
+  // const username = session?.user?.username || 'guest'
+  const params = useParams()
+  const username = params.username || 'guest'
   return (
-    <div>anonymous page for message</div>
+    <div>anonymous PublicMessagePage for message <strong>@{username}</strong></div>
   )
 }
 
-export default page
+export default PublicMessagePage

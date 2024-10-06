@@ -46,7 +46,10 @@ const Page = () => {
     const result = await signIn('credentials', {
       identifier: data.identifier,
       password: data.password,
-      redirect: false
+      redirect: true,
+      // callbackUrl: '/dashboard',
+      // redirect: false,
+      // callbackUrl: '/dashboard',
     });
 
     if (result?.error) {
@@ -70,7 +73,7 @@ const Page = () => {
           variant: 'destructive',
         });
       };
-    } if (result?.url) {
+    }else if (result?.url) {
       router.replace('/dashboard')
     }
   }
@@ -102,7 +105,7 @@ const Page = () => {
                   <FormLabel>Email/Username</FormLabel>
                   <FormControl>
                     <Input
-                      // type="email"
+                      type="email"
                       placeholder="Enter your email/username"
                       {...field}
                     // aria-describedby="email-error"
@@ -152,9 +155,9 @@ const Page = () => {
         {/* Link to login page for existing users */}
         <div className="text-center mt-">
           <p>
-            Already a member? {''}
-            <Link href="/sign-in" className="text-blue-500 hover:underline">
-              Login
+            Create an account {''}
+            <Link href="/sign-up" className="text-blue-500 hover:underline">
+              Sign Up
             </Link>
           </p>
         </div>
